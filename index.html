@@ -25,7 +25,7 @@
 
         /* Container */
         .container {
-            max-width: 900px;
+            max-width: 1000px; /* Slightly wider for new sections */
             margin: 0 auto;
             padding: 20px;
         }
@@ -71,7 +71,7 @@
         .hero p {
             font-size: 1.2rem;
             color: var(--secondary);
-            max-width: 600px;
+            max-width: 700px;
             margin: 0 auto 30px auto;
         }
 
@@ -103,39 +103,29 @@
             padding-left: 15px;
         }
 
-        /* Skills Grid */
-        .skills-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .skill-tag {
-            background-color: #21262d;
-            border: 1px solid #30363d;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-        }
-
-        /* Project Cards */
+        /* Projects Grid (Clickable) */
         .project-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
         }
 
+        /* Making the card a link */
         .project-card {
             background-color: var(--card-bg);
             border: 1px solid #30363d;
             border-radius: 6px;
             padding: 20px;
-            transition: transform 0.2s;
+            text-decoration: none; /* Remove underline from link */
+            color: inherit;
+            display: block; /* Make anchor act like a block div */
+            transition: transform 0.2s, border-color 0.2s;
         }
 
         .project-card:hover {
             transform: translateY(-5px);
-            border-color: var(--secondary);
+            border-color: var(--accent);
+            cursor: pointer;
         }
 
         .project-card h3 {
@@ -148,6 +138,46 @@
             color: var(--secondary);
             margin-bottom: 15px;
             font-style: italic;
+        }
+        
+        /* General Grid for Comps/Activities */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 20px;
+        }
+
+        .info-card {
+            background-color: var(--card-bg);
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            overflow: hidden; /* Keeps image inside border */
+        }
+
+        .info-image {
+            width: 100%;
+            height: 200px;
+            background-color: #21262d; /* Placeholder color */
+            object-fit: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #8b949e;
+        }
+
+        .info-content {
+            padding: 20px;
+        }
+
+        .info-content h3 {
+            margin-top: 0;
+            color: var(--text-main);
+        }
+        
+        .info-content span {
+            color: var(--accent);
+            font-size: 0.9rem;
+            font-weight: bold;
         }
 
         /* Footer */
@@ -163,10 +193,10 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Responsive */
         @media (max-width: 600px) {
             .hero h1 { font-size: 2rem; }
-            .nav-links { display: none; } /* Simplified for mobile */
+            .nav-links { display: none; }
+            .info-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -177,71 +207,127 @@
             <div class="logo">HJJ.</div>
             <div class="nav-links">
                 <a href="#about">About</a>
-                <a href="#skills">Skills</a>
                 <a href="#projects">Projects</a>
+                <a href="#competitions">Competitions</a>
+                <a href="#activities">Activities</a>
                 <a href="#contact">Contact</a>
             </div>
         </nav>
 
         <div class="hero">
             <h1>Hi, I'm Hui Jun Jie.</h1>
-            <p>Cyber Security Student at APU | Software Developer | President of APU Chinese Language & Culture Society</p>
-            <a href="#contact" class="btn">Get In Touch</a>
+            <p>
+                Cyber Security Student (CGPA 3.86) | President of APU Chinese Language & Culture Society | King's Scout
+            </p>
+            <a href="resume.pdf" target="_blank" class="btn">View My Resume</a>
         </div>
 
         <section id="about">
             <h2>About Me</h2>
             <p>
-                I am a final-year student pursuing a BSc (Hons) in Computer Science (Cyber Security) at Asia Pacific University of Technology & Innovation. 
-                My passion lies in the intersection of secure software development and network infrastructure.
+                I am a final-year student pursuing a <strong>BSc (Hons) in Computer Science (Cyber Security)</strong> at Asia Pacific University (Malaysia) and De Montfort University (UK). 
+                As a VC List awardee for Academic Excellence[cite: 10], I combine technical proficiency in software development and network forensics with strong leadership skills.
             </p>
             <p>
-                Currently, I am looking for an <strong>internship in the technology or security sector</strong> where I can apply my skills in Java, C++, and network configuration.
-                Outside of tech, I serve as the President of the APU Chinese Language & Culture Society (15th Council), where I hone my leadership and organizational skills.
+                I am seeking a <strong>professional internship</strong> [cite: 6] to apply my skills in secure coding, CTF hacking, and network infrastructure. 
+                Beyond academics, I have led large-scale events as the President of the APU Chinese Language & Culture Society [cite: 37] and achieved the prestigious King's Scout Award[cite: 59].
             </p>
-        </section>
-
-        <section id="skills">
-            <h2>Technical Skills</h2>
-            <div class="skills-grid">
-                <span class="skill-tag">Java</span>
-                <span class="skill-tag">C++</span>
-                <span class="skill-tag">Python</span>
-                <span class="skill-tag">C#</span>
-                <span class="skill-tag">HTML & CSS</span>
-                <span class="skill-tag">Memory Forensics</span>
-                <span class="skill-tag">Cisco Packet Tracer</span>
-                <span class="skill-tag">Network Design (VLAN, HSRP)</span>
-                <span class="skill-tag">CTF Competitions</span>
-            </div>
         </section>
 
         <section id="projects">
-            <h2>Featured Projects</h2>
+            <h2>Projects</h2>
+            <p style="color: var(--secondary); margin-bottom: 20px;"><em>Click on a project to view more details.</em></p>
             <div class="project-grid">
                 
-                <div class="project-card">
-                    <h3>Medical Clinic Management System</h3>
-                    <div class="project-tech">Java, Swing GUI, OOP</div>
+                <a href="project-library.html" class="project-card">
+                    <h3>Library Management System</h3>
+                    <div class="project-tech">Python, Team Collaboration</div>
                     <p>
-                        A comprehensive desktop application for managing clinic operations. Features include patient records management, appointment scheduling, and multi-role authentication for doctors and staff.
+                        Collaborated in a team to build a system with modules for user authentication and administrative processing. [cite: 17]
                     </p>
-                </div>
+                </a>
 
-                <div class="project-card">
+                <a href="project-restaurant.html" class="project-card">
+                    <h3>Restaurant Management System</h3>
+                    <div class="project-tech">C#, GUI, Data Storage</div>
+                    <p>
+                         Developed a multi-role system featuring GUI-based ordering, payment processing, and receipt generation using C#. [cite: 15]
+                    </p>
+                </a>
+
+                <a href="project-medical.html" class="project-card">
+                    <h3>Medical Centre Management</h3>
+                    <div class="project-tech">Java, OOP, MVC Architecture</div>
+                    <p>
+                        Created a clinic system managing patient records and appointments, utilizing Object-Oriented Programming (OOP) for maintainability. [cite: 15, 16]
+                    </p>
+                </a>
+
+                <a href="project-network.html" class="project-card">
                     <h3>Enterprise Network Design</h3>
-                    <div class="project-tech">Cisco Packet Tracer, Networking</div>
+                    <div class="project-tech">Cisco Packet Tracer, VLAN, HSRP</div>
                     <p>
-                        Designed and configured a robust enterprise network topology. Implemented VLANs for segmentation, EtherChannel for redundancy, and HSRP for high availability gateway protocols.
+                        Designed a full enterprise network with VLANs, OSPF routing, WLAN, and Layer-2 security mechanisms. [cite: 21, 22]
                     </p>
+                </a>
+
+            </div>
+        </section>
+
+        <section id="competitions">
+            <h2>Competitions</h2>
+            <div class="info-grid">
+                
+                <div class="info-card">
+                    <img src="placeholder-comp1.jpg" alt="SUNCTF 2025" class="info-image">
+                    <div class="info-content">
+                        <span>13th Place (Open Category)</span>
+                        <h3>SUNCTF 2025</h3>
+                        <p>Competed against 81 teams in a high-intensity Capture The Flag event, testing skills in cryptography and exploitation. [cite: 29, 30]</p>
+                    </div>
                 </div>
 
-                <div class="project-card">
-                    <h3>Flight Reservation System</h3>
-                    <div class="project-tech">C++, Data Structures</div>
-                    <p>
-                        A console-based application handling flight bookings and seating management. Utilized linked lists for efficient data handling and custom algorithms for seat allocation.
-                    </p>
+                <div class="info-card">
+                    <img src="placeholder-comp2.jpg" alt="Internal CTF" class="info-image">
+                    <div class="info-content">
+                        <span>14th Place</span>
+                        <h3>Internal CTF Competition 2025</h3>
+                        <p>Demonstrated practical security skills in this internal university challenge. [cite: 32, 33]</p>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <img src="placeholder-comp3.jpg" alt="AI Hackathon" class="info-image">
+                    <div class="info-content">
+                        <span>Participation</span>
+                        <h3>The Great AI Hackathon 2025</h3>
+                        <p>Participated in an ASEAN officially recognized hackathon focused on Artificial Intelligence solutions. [cite: 34]</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="activities">
+            <h2>Extracurricular Activities</h2>
+            <div class="info-grid">
+                
+                <div class="info-card">
+                    <img src="placeholder-activity1.jpg" alt="APU CLCS President" class="info-image">
+                    <div class="info-content">
+                        <span>President (15th Council)</span>
+                        <h3>APU Chinese Language & Culture Society</h3>
+                        <p>Leading operations and event planning for a large cultural organization. Oversaw the APU CNY Celebration 2025 attended by 1,200 participants. [cite: 36, 37, 40, 42]</p>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <img src="placeholder-activity2.jpg" alt="King's Scout" class="info-image">
+                    <div class="info-content">
+                        <span>King's Scout Award (2022)</span>
+                        <h3>Persekutuan Pengakap Malaysia</h3>
+                        <p>Achieved the highest rank in the Malaysian Scouts Association, awarded to less than 1% of scouts nationwide. [cite: 59, 62]</p>
+                    </div>
                 </div>
 
             </div>
@@ -249,18 +335,18 @@
 
         <section id="contact" style="border-bottom: none;">
             <h2>Contact</h2>
-            <p>I am currently open to internship opportunities. Feel free to reach out!</p>
+            <p>I am currently open to internship opportunities in Cyber Security or Software Development.</p>
             <p>
-                <a href="mailto:your-email@example.com" class="btn">Email Me</a>
+                <a href="mailto:huijunjie0229@gmail.com" class="btn">Email Me</a> [cite: 3]
             </p>
             <p style="margin-top: 20px; font-size: 0.9rem;">
-                <a href="#" style="color: var(--accent);">LinkedIn</a> &bull; 
+                <a href="https://www.linkedin.com/in/jun-jie-hui-0a3957270" style="color: var(--accent);">LinkedIn</a> [cite: 2] &bull; 
                 <a href="#" style="color: var(--accent);">GitHub</a>
             </p>
         </section>
 
         <footer>
-            <p>&copy; 2026 Hui Jun Jie. Built with HTML & CSS.</p>
+            <p>&copy; 2026 Hui Jun Jie.</p>
         </footer>
     </div>
 

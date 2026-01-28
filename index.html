@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hui Jun Jie | Cyber Security Portfolio</title>
+    <style>
+        /* --- CSS STYLES --- */
+        :root {
+            --bg-color: #0d1117; /* GitHub Dark Dimmed */
+            --card-bg: #161b22;
+            --text-main: #c9d1d9;
+            --accent: #2ea043; /* GitHub Green */
+            --accent-hover: #3fb950;
+            --secondary: #8b949e;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid #30363d;
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: var(--accent);
+        }
+
+        .nav-links a {
+            color: var(--text-main);
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 0.9rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 80px 0;
+            animation: fadeIn 1s ease-in;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--secondary);
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-hover);
+        }
+
+        /* Sections */
+        section {
+            padding: 50px 0;
+            border-bottom: 1px solid #30363d;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            border-left: 5px solid var(--accent);
+            padding-left: 15px;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background-color: #21262d;
+            border: 1px solid #30363d;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Project Cards */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background-color: var(--card-bg);
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            padding: 20px;
+            transition: transform 0.2s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--secondary);
+        }
+
+        .project-card h3 {
+            margin-top: 0;
+            color: var(--accent);
+        }
+
+        .project-tech {
+            font-size: 0.8rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: var(--secondary);
+            font-size: 0.9rem;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2rem; }
+            .nav-links { display: none; } /* Simplified for mobile */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <nav>
+            <div class="logo">HJJ.</div>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+
+        <div class="hero">
+            <h1>Hi, I'm Hui Jun Jie.</h1>
+            <p>Cyber Security Student at APU | Software Developer | President of APU Chinese Language & Culture Society</p>
+            <a href="#contact" class="btn">Get In Touch</a>
+        </div>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <p>
+                I am a final-year student pursuing a BSc (Hons) in Computer Science (Cyber Security) at Asia Pacific University of Technology & Innovation. 
+                My passion lies in the intersection of secure software development and network infrastructure.
+            </p>
+            <p>
+                Currently, I am looking for an <strong>internship in the technology or security sector</strong> where I can apply my skills in Java, C++, and network configuration.
+                Outside of tech, I serve as the President of the APU Chinese Language & Culture Society (15th Council), where I hone my leadership and organizational skills.
+            </p>
+        </section>
+
+        <section id="skills">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <span class="skill-tag">Java</span>
+                <span class="skill-tag">C++</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">C#</span>
+                <span class="skill-tag">HTML & CSS</span>
+                <span class="skill-tag">Memory Forensics</span>
+                <span class="skill-tag">Cisco Packet Tracer</span>
+                <span class="skill-tag">Network Design (VLAN, HSRP)</span>
+                <span class="skill-tag">CTF Competitions</span>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Featured Projects</h2>
+            <div class="project-grid">
+                
+                <div class="project-card">
+                    <h3>Medical Clinic Management System</h3>
+                    <div class="project-tech">Java, Swing GUI, OOP</div>
+                    <p>
+                        A comprehensive desktop application for managing clinic operations. Features include patient records management, appointment scheduling, and multi-role authentication for doctors and staff.
+                    </p>
+                </div>
+
+                <div class="project-card">
+                    <h3>Enterprise Network Design</h3>
+                    <div class="project-tech">Cisco Packet Tracer, Networking</div>
+                    <p>
+                        Designed and configured a robust enterprise network topology. Implemented VLANs for segmentation, EtherChannel for redundancy, and HSRP for high availability gateway protocols.
+                    </p>
+                </div>
+
+                <div class="project-card">
+                    <h3>Flight Reservation System</h3>
+                    <div class="project-tech">C++, Data Structures</div>
+                    <p>
+                        A console-based application handling flight bookings and seating management. Utilized linked lists for efficient data handling and custom algorithms for seat allocation.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="contact" style="border-bottom: none;">
+            <h2>Contact</h2>
+            <p>I am currently open to internship opportunities. Feel free to reach out!</p>
+            <p>
+                <a href="mailto:your-email@example.com" class="btn">Email Me</a>
+            </p>
+            <p style="margin-top: 20px; font-size: 0.9rem;">
+                <a href="#" style="color: var(--accent);">LinkedIn</a> &bull; 
+                <a href="#" style="color: var(--accent);">GitHub</a>
+            </p>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Hui Jun Jie. Built with HTML & CSS.</p>
+        </footer>
+    </div>
+
+</body>
+</html>

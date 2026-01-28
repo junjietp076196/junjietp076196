@@ -161,7 +161,7 @@
                 <span class="tag">Network Security</span>
             </div>
             <p style="font-size: 1.1rem; color: var(--secondary);">
-                [cite_start]A scalable, redundant, and secure network infrastructure designed for a multi-department enterprise, featuring advanced switching and routing protocols[cite: 1, 3].
+                A scalable, redundant, and secure network infrastructure designed for a multi-department enterprise, featuring advanced switching and routing protocols.
             </p>
         </header>
 
@@ -171,7 +171,7 @@
                 This project involved designing and configuring a complete network topology for an organization with multiple departments (Sales, HR, IT, Finance). The goal was to ensure efficient data flow, high availability, and robust security using Cisco networking equipment.
             </p>
             <p>
-                [cite_start]The design utilizes <strong>Variable Length Subnet Masking (VLSM)</strong> to minimize IP address wastage and <strong>OSPF</strong> for dynamic routing between different branch locations[cite: 3, 13].
+                The design utilizes <strong>Variable Length Subnet Masking (VLSM)</strong> to minimize IP address wastage and <strong>OSPF</strong> for dynamic routing between different branch locations.
             </p>
         </section>
 
@@ -180,23 +180,23 @@
             
             <h3>1. Network Segmentation & Security</h3>
             <ul>
-                [cite_start]<li><strong>VLANs:</strong> Segregated traffic into distinct VLANs (Sales, HR, IT, Finance, Server, Wireless) to improve performance and security[cite: 8].</li>
-                [cite_start]<li><strong>Port Security:</strong> Implemented "Sticky" MAC address learning on access ports, restricting access to a maximum of 2 devices per port to prevent unauthorized connections[cite: 10].</li>
-                [cite_start]<li><strong>SSH Access:</strong> Configured secure remote management for all devices[cite: 5].</li>
+                <li><strong>VLANs:</strong> Segregated traffic into distinct VLANs (Sales, HR, IT, Finance, Server, Wireless) to improve performance and security.</li>
+                <li><strong>Port Security:</strong> Implemented "Sticky" MAC address learning on access ports, restricting access to a maximum of 2 devices per port to prevent unauthorized connections.</li>
+                <li><strong>SSH Access:</strong> Configured secure remote management for all devices.</li>
             </ul>
 
             <h3>2. High Availability & Redundancy</h3>
             <p style="color: var(--secondary);">Ensuring the network stays online even if a device fails.</p>
             <ul>
-                <li><strong>HSRP (Hot Standby Router Protocol):</strong> Configured Active and Standby routers to provide a redundant default gateway. [cite_start]If the main router fails, traffic automatically switches to the backup[cite: 17].</li>
-                [cite_start]<li><strong>EtherChannel:</strong> Bundled physical links into a single logical channel using LACP, increasing bandwidth and providing link redundancy between switches[cite: 16].</li>
+                <li><strong>HSRP (Hot Standby Router Protocol):</strong> Configured Active and Standby routers to provide a redundant default gateway. If the main router fails, traffic automatically switches to the backup.</li>
+                <li><strong>EtherChannel:</strong> Bundled physical links into a single logical channel using LACP, increasing bandwidth and providing link redundancy between switches.</li>
             </ul>
 
             <h3>3. Routing & Services</h3>
             <ul>
-                [cite_start]<li><strong>Inter-VLAN Routing:</strong> Used Router-on-a-Stick configuration with subinterfaces to allow communication between different departments[cite: 13].</li>
-                [cite_start]<li><strong>DHCPv4:</strong> configured routers to act as DHCP servers, automatically assigning IP addresses to end devices[cite: 19].</li>
-                [cite_start]<li><strong>Wireless LAN:</strong> Deployed a Wireless LAN Controller (WLC) to manage Lightweight Access Points (LAPs) for secure Wi-Fi connectivity[cite: 20].</li>
+                <li><strong>Inter-VLAN Routing:</strong> Used Router-on-a-Stick configuration with subinterfaces to allow communication between different departments.</li>
+                <li><strong>DHCPv4:</strong> configured routers to act as DHCP servers, automatically assigning IP addresses to end devices.</li>
+                <li><strong>Wireless LAN:</strong> Deployed a Wireless LAN Controller (WLC) to manage Lightweight Access Points (LAPs) for secure Wi-Fi connectivity.</li>
             </ul>
         </section>
 
@@ -226,7 +226,7 @@
             <h2>Challenges & Learnings</h2>
             <p>
                 Configuring <strong>EtherChannel</strong> presented challenges with mismatched port protocols. I learned the importance of consistent configuration (speed, duplex, VLAN modes) across both ends of a link. 
-                [cite_start]Additionally, calculating the <strong>VLSM</strong> scheme required precision to ensure no IP conflicts occurred between the 13 different subnets required[cite: 3].
+                Additionally, calculating the <strong>VLSM</strong> scheme required precision to ensure no IP conflicts occurred between the 13 different subnets required.
             </p>
         </section>
 

@@ -122,7 +122,7 @@
             top: 0;
             left: 0;
             opacity: 0;
-            animation: fadeLoop 15s infinite; /* 15s total for 3 images */
+            animation: fadeLoop 20s infinite; /* 15s total for 3 images */
         }
 
         /* Animation Delays for each image */
@@ -135,13 +135,15 @@
         .carousel-bg img:nth-child(3) {
             animation-delay: 10s; /* Starts after 10s */
         }
+        .carousel-bg img:nth-child(4) {
+            animation-delay: 15s;
+      }
 
-        /* Keyframes for Fading */
         @keyframes fadeLoop {
             0% { opacity: 0; }
-            10% { opacity: 1; }  /* Fade in quickly */
-            33% { opacity: 1; }  /* Stay visible */
-            43% { opacity: 0; }  /* Fade out */
+            5% { opacity: 1; }   /* Fade in quickly */
+            25% { opacity: 1; }  /* Stay visible until 25% of the time (5s) */
+            30% { opacity: 0; }  /* Fade out */
             100% { opacity: 0; }
         }
 
@@ -287,6 +289,7 @@
                 <img src="Photo\hero-bg-1.jpg" alt="Background 1">
                 <img src="Photo\hero-bg-2.jpg" alt="Background 2">
                 <img src="Photo\hero-bg-3.jpeg" alt="Background 3">
+                <img src="Photo\hero-bg-4.jpg" alt="Background 4">
             </div>
 
             <div class="hero-overlay"></div>
